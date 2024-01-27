@@ -72,6 +72,7 @@ public class GameOfLife {
 				noMoreLines = true;
 			}
 			else{
+				// #feedback - note the indentation here
 			for(int i = 0; i < checkNextRow.length(); i++){
 				if (checkNextRow.charAt(i) == 'x') {
 					board[startingRow][i+1] = 1;
@@ -92,8 +93,8 @@ public class GameOfLife {
 		int cols = board[0].length;
 		int[][] newBoard = new int[rows][cols];
 		for(int i = 1; i < rows -1; i++){ // takes into account the +2 for the rows in the read file
-		for(int j = 1; j < cols -1; j++){ // takes into account the +2 for the cols in the read file
-			newBoard[i][j] = cellValue(board, i, j); // implementing the cellValue function to "evolve" according to the rules of cellValue.
+			for(int j = 1; j < cols -1; j++){ // takes into account the +2 for the cols in the read file
+				newBoard[i][j] = cellValue(board, i, j); // implementing the cellValue function to "evolve" according to the rules of cellValue.
 			}
 		}
 			
@@ -159,9 +160,9 @@ public class GameOfLife {
 		int rows = arr.length -1;
 		int cols = arr[0].length -1;
 		for(int i = 1; i < rows; i++){
-		for(int j = 1; j < cols; j++){
-			System.out.printf("%3s", arr[i][j]);// changes the print format of the board
-		}
+			for(int j = 1; j < cols; j++){
+				System.out.printf("%3s", arr[i][j]);// changes the print format of the board
+			}
 		System.out.println();
 	}
 }
